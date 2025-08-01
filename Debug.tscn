@@ -1,0 +1,123 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsqfcsckikp43"]
+
+[ext_resource type="Script" uid="uid://dd4lfglq7b6uo" path="res://scripts/DebugCanvas.cs" id="1_o6rdn"]
+[ext_resource type="Script" uid="uid://cyh7fs4lya7df" path="res://scripts/CustomPerformance.cs" id="2_kypdp"]
+
+[node name="DebugCanvas" type="CanvasLayer"]
+follow_viewport_enabled = true
+script = ExtResource("1_o6rdn")
+
+[node name="TopLeftPanel" type="PanelContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TopLeftPanel"]
+layout_mode = 2
+
+[node name="TailSizeHBox" type="HBoxContainer" parent="TopLeftPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="TailSizeLabel" type="Label" parent="TopLeftPanel/VBoxContainer/TailSizeHBox"]
+layout_mode = 2
+text = "Tail Size:"
+
+[node name="TailSize" type="Label" parent="TopLeftPanel/VBoxContainer/TailSizeHBox"]
+layout_mode = 2
+text = "0.00"
+
+[node name="TailTimeHBox" type="HBoxContainer" parent="TopLeftPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="TailTimeLabel" type="Label" parent="TopLeftPanel/VBoxContainer/TailTimeHBox"]
+layout_mode = 2
+text = "Tail Time (ms):"
+
+[node name="TailTime" type="Label" parent="TopLeftPanel/VBoxContainer/TailTimeHBox"]
+layout_mode = 2
+text = "0.00"
+
+[node name="Line3HBox" type="HBoxContainer" parent="TopLeftPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Line3Label" type="Label" parent="TopLeftPanel/VBoxContainer/Line3HBox"]
+layout_mode = 2
+text = "Line3 (units):"
+
+[node name="Line3Value" type="Label" parent="TopLeftPanel/VBoxContainer/Line3HBox"]
+layout_mode = 2
+text = "0"
+
+[node name="TopRightPanel" type="PanelContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TopRightPanel"]
+layout_mode = 2
+
+[node name="FPSHBox" type="HBoxContainer" parent="TopRightPanel/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="FPS" type="Label" parent="TopRightPanel/VBoxContainer/FPSHBox"]
+layout_mode = 2
+text = "145"
+
+[node name="UnitsLabel" type="Label" parent="TopRightPanel/VBoxContainer/FPSHBox"]
+layout_mode = 2
+text = "fps"
+
+[node name="ProcessHBox" type="HBoxContainer" parent="TopRightPanel/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="ProcessLabel" type="Label" parent="TopRightPanel/VBoxContainer/ProcessHBox"]
+layout_mode = 2
+text = "Prc"
+
+[node name="Process" type="Label" parent="TopRightPanel/VBoxContainer/ProcessHBox"]
+layout_mode = 2
+text = "7.17"
+
+[node name="UnitsLabel" type="Label" parent="TopRightPanel/VBoxContainer/ProcessHBox"]
+layout_mode = 2
+text = "ms"
+
+[node name="PhysicsHBox" type="HBoxContainer" parent="TopRightPanel/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="PhysicsLabel" type="Label" parent="TopRightPanel/VBoxContainer/PhysicsHBox"]
+layout_mode = 2
+text = "Phy"
+
+[node name="Physics" type="Label" parent="TopRightPanel/VBoxContainer/PhysicsHBox"]
+layout_mode = 2
+text = "0.29"
+
+[node name="UnitsLabel" type="Label" parent="TopRightPanel/VBoxContainer/PhysicsHBox"]
+layout_mode = 2
+text = "ms"
+
+[node name="NavigationHBox" type="HBoxContainer" parent="TopRightPanel/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="NavigationLabel" type="Label" parent="TopRightPanel/VBoxContainer/NavigationHBox"]
+layout_mode = 2
+text = "Nav"
+
+[node name="Navigation" type="Label" parent="TopRightPanel/VBoxContainer/NavigationHBox"]
+layout_mode = 2
+text = "0.00"
+
+[node name="UnitsLabel" type="Label" parent="TopRightPanel/VBoxContainer/NavigationHBox"]
+layout_mode = 2
+text = "ms"
+
+[node name="CustomPerformance" type="Node" parent="."]
+script = ExtResource("2_kypdp")
+metadata/_custom_type_script = "uid://cyh7fs4lya7df"
