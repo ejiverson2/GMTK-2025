@@ -4,19 +4,17 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-public class Trail {
+public partial class Trail : Line2D {
+	[Export] int maxSegments = 200;
 	LinkedList<TrailSegment> segments;
-	int maxSegments = 30;
-	int numSegments = 0;
-	public Node2D Parent;
-	public Trail(Node2D trailParent, int maxSegments) {
-		this.Parent = trailParent;
-		this.maxSegments = maxSegments;
-		segments = new LinkedList<TrailSegment>();
-	}
 
-	[Signal]
-	public delegate void LoopCreated();
+	//Events
+	[Signal] public delegate void LoopCreatedEventHandler(Vector2[] points);
+
+	public void Initialize(Vector2 startPosition) {
+		segments = new LinkedList<TrailSegment>();
+		AddSegment(startPosition);
+	}
 
 	public void AddSegment(Vector2 point) {
 		TrailSegment segment;
@@ -36,7 +34,7 @@ public class Trail {
 				GD.Print("intersectionPoint = " + (Vector2)intersectionPoint);
 
 				Vector2[] loopPoints = GetLoopPoints(segmentsLeftToCount, node, (Vector2)intersectionPoint);
-				CreateLoopVisual(loopPoints);
+				EmitSignal(SignalName.LoopCreated, loopPoints);
 
 				segments.Clear();
 				break;
@@ -65,15 +63,6 @@ public class Trail {
 		return points;
 	}
 
-	void CreateLoopVisual(Vector2[] points) {
-		Line2D loop = new Line2D();
-		loop.Points = points;
-		loop.Closed = true;
-		loop.DefaultColor = Colors.Yellow;
-
-		Parent.GetTree().Root.AddChild(loop);
-	}
-
 	void RemoveEndSegment() {
 		segments.First.Value.Destroy();
 		segments.RemoveFirst();
@@ -95,5 +84,9 @@ public class Trail {
 		}
 
 		return points;
+	}
+
+	public void Render() {
+		Points = GetPointsArray();
 	}
 }

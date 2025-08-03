@@ -5,7 +5,6 @@ public partial class Player : CharacterBody2D {
 	// Dependencies
 	[Export] Line2D trailVFX;
 	[Export] Node2D trailEmissionPoint;
-	[Export] Area2D TrailCollider;
 	// Settings
 	float rotationSpeed = 180f; // in deg/sec
 								// float rotationSpeed = 360f; // in deg/sec
@@ -19,11 +18,11 @@ public partial class Player : CharacterBody2D {
 
 
 	// Internal Variables
-	Trail trail;
+	// Trail trail;
 
 	public override void _Ready() {
-		trail = new Trail(this, trailMaxPoints);
-		trail.AddSegment(Position);
+		// trail = new Trail(this, trailMaxPoints);
+		// trail.AddSegment(Position);
 
 		Velocity = new Vector2(initialSpeed, 0);
 		currentSpeed = initialSpeed;
@@ -44,11 +43,11 @@ public partial class Player : CharacterBody2D {
 		MoveAndSlide();
 
 		// Do trail
-		if (trailEmissionPoint.GlobalPosition.DistanceTo(trail.GetLeadingPoint()) >= trailSegmentLength) {
-			trail.AddSegment(trailEmissionPoint.GlobalPosition);
-		}
+		// if (trailEmissionPoint.GlobalPosition.DistanceTo(trail.GetLeadingPoint()) >= trailSegmentLength) {
+		// 	trail.AddSegment(trailEmissionPoint.GlobalPosition);
+		// }
 
-		trailVFX.Points = trail.GetPointsArray();
+		// trailVFX.Points = trail.GetPointsArray();
 	}
 
 	void ApplyPhysicsWithGravity(float delta) {
@@ -64,9 +63,5 @@ public partial class Player : CharacterBody2D {
 		}
 
 		Velocity = Transform.X * currentSpeed;
-
-
-
-		GD.Print(Velocity);
 	}
 }
