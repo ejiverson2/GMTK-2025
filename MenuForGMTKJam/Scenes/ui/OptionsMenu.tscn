@@ -1,0 +1,201 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvwximr27qah0"]
+
+[ext_resource type="Script" uid="uid://cgaayv3e8gv70" path="res://Scripts/ui/OptionsMenu.cs" id="1_6353r"]
+[ext_resource type="Script" uid="uid://bg3jnblx8mcks" path="res://Scripts/ui/RebindControlButton.cs" id="2_imx5p"]
+
+[node name="OptionsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6353r")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TabContainer" type="TabContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -265.0
+offset_top = -97.0
+offset_right = 265.0
+offset_bottom = 97.0
+grow_horizontal = 2
+grow_vertical = 2
+current_tab = 0
+
+[node name="Audio" type="PanelContainer" parent="CanvasLayer/TabContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/TabContainer/Audio"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/TabContainer/Audio/MarginContainer"]
+layout_mode = 2
+
+[node name="MasterVolume" type="Label" parent="CanvasLayer/TabContainer/Audio/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Master Volume"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/TabContainer/Audio/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ResetMasterVButton" type="Button" parent="CanvasLayer/TabContainer/Audio/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Reset"
+
+[node name="MuteMaster" type="CheckBox" parent="CanvasLayer/TabContainer/Audio/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Mute"
+
+[node name="MasterVHSlider" type="HSlider" parent="CanvasLayer/TabContainer/Audio/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = -80.0
+max_value = 8.0
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/TabContainer/Audio/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="MusicVolume" type="Label" parent="CanvasLayer/TabContainer/Audio/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Music Volume"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/TabContainer/Audio/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ResetMusicVButton" type="Button" parent="CanvasLayer/TabContainer/Audio/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Reset"
+
+[node name="MuteMusic" type="CheckBox" parent="CanvasLayer/TabContainer/Audio/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Mute"
+
+[node name="MusicVHSlider" type="HSlider" parent="CanvasLayer/TabContainer/Audio/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = -80.0
+max_value = 8.0
+
+[node name="SfxVolume" type="Label" parent="CanvasLayer/TabContainer/Audio/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "SFX Volume"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/TabContainer/Audio/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ResetSfxVButton" type="Button" parent="CanvasLayer/TabContainer/Audio/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Reset"
+
+[node name="MuteSfx" type="CheckBox" parent="CanvasLayer/TabContainer/Audio/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Mute"
+
+[node name="SfxVHSlider" type="HSlider" parent="CanvasLayer/TabContainer/Audio/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = -80.0
+max_value = 8.0
+
+[node name="HSeparator2" type="HSeparator" parent="CanvasLayer/TabContainer/Audio/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="SaveExit" type="HBoxContainer" parent="CanvasLayer/TabContainer/Audio/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Save" type="Button" parent="CanvasLayer/TabContainer/Audio/MarginContainer/VBoxContainer/SaveExit"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Apply"
+
+[node name="Exit" type="Button" parent="CanvasLayer/TabContainer/Audio/MarginContainer/VBoxContainer/SaveExit"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
+text = "Exit"
+
+[node name="Controls" type="PanelContainer" parent="CanvasLayer/TabContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/TabContainer/Controls"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/TabContainer/Controls/MarginContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/TabContainer/Controls/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 150
+columns = 2
+script = ExtResource("2_imx5p")
+
+[node name="Label" type="Label" parent="CanvasLayer/TabContainer/Controls/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Pitch up"
+
+[node name="Button" type="Button" parent="CanvasLayer/TabContainer/Controls/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Left"
+
+[node name="Label2" type="Label" parent="CanvasLayer/TabContainer/Controls/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Pitch down"
+
+[node name="Button2" type="Button" parent="CanvasLayer/TabContainer/Controls/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Right"
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/TabContainer/Controls/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="SaveExit2" type="HBoxContainer" parent="CanvasLayer/TabContainer/Controls/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Save" type="Button" parent="CanvasLayer/TabContainer/Controls/MarginContainer/VBoxContainer/SaveExit2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Apply"
+
+[node name="Exit" type="Button" parent="CanvasLayer/TabContainer/Controls/MarginContainer/VBoxContainer/SaveExit2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
+text = "Exit"
+
+[connection signal="pressed" from="CanvasLayer/TabContainer/Audio/MarginContainer/VBoxContainer/HBoxContainer/ResetMasterVButton" to="." method="_on_reset_master_v_button_pressed"]
+[connection signal="toggled" from="CanvasLayer/TabContainer/Audio/MarginContainer/VBoxContainer/HBoxContainer/MuteMaster" to="." method="_on_mute_master_toggled"]
+[connection signal="value_changed" from="CanvasLayer/TabContainer/Audio/MarginContainer/VBoxContainer/HBoxContainer/MasterVHSlider" to="." method="_on_master_vh_slider_value_changed"]
+[connection signal="pressed" from="CanvasLayer/TabContainer/Audio/MarginContainer/VBoxContainer/HBoxContainer2/ResetMusicVButton" to="." method="_on_reset_music_v_button_pressed"]
+[connection signal="toggled" from="CanvasLayer/TabContainer/Audio/MarginContainer/VBoxContainer/HBoxContainer2/MuteMusic" to="." method="_on_mute_music_toggled"]
+[connection signal="value_changed" from="CanvasLayer/TabContainer/Audio/MarginContainer/VBoxContainer/HBoxContainer2/MusicVHSlider" to="." method="_on_music_vh_slider_value_changed"]
+[connection signal="pressed" from="CanvasLayer/TabContainer/Audio/MarginContainer/VBoxContainer/HBoxContainer3/ResetSfxVButton" to="." method="_on_reset_sfx_v_button_pressed"]
+[connection signal="toggled" from="CanvasLayer/TabContainer/Audio/MarginContainer/VBoxContainer/HBoxContainer3/MuteSfx" to="." method="_on_mute_sfx_toggled"]
+[connection signal="value_changed" from="CanvasLayer/TabContainer/Audio/MarginContainer/VBoxContainer/HBoxContainer3/SfxVHSlider" to="." method="_on_sfx_vh_slider_value_changed"]
+[connection signal="pressed" from="CanvasLayer/TabContainer/Audio/MarginContainer/VBoxContainer/SaveExit/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="CanvasLayer/TabContainer/Audio/MarginContainer/VBoxContainer/SaveExit/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="CanvasLayer/TabContainer/Controls/MarginContainer/VBoxContainer/GridContainer/Button" to="CanvasLayer/TabContainer/Controls/MarginContainer/VBoxContainer/GridContainer" method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/TabContainer/Controls/MarginContainer/VBoxContainer/GridContainer/Button2" to="CanvasLayer/TabContainer/Controls/MarginContainer/VBoxContainer/GridContainer" method="_on_button_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/TabContainer/Controls/MarginContainer/VBoxContainer/SaveExit2/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="CanvasLayer/TabContainer/Controls/MarginContainer/VBoxContainer/SaveExit2/Exit" to="." method="_on_exit_pressed"]

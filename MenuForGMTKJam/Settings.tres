@@ -1,0 +1,27 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Scripts/ui/Settings.cs" id="1_mtuwp"]
+
+[resource]
+script = ExtResource("1_mtuwp")
+MasterVolume = -6.0
+MusicVolume = -6.0
+SFXVolume = -6.0
+MasterVolumeMuted = false
+MusicVolumeMuted = false
+SFXVolumeMuted = false
+pitchUpKey = 4194319
+pitchDownKey = 4194321
+debugOverlayAdvanced1 = true
+debugOverlayAdvanced2 = true
+debugOverlayAdvanced3 = true
+debugOverlayAdvanced4 = true
+debugOverlayAdvanced5 = false
+debugOverlayAdvanced6 = false
+ShowDebug = true
+PlayerPath = NodePath("/root/Menu/OptionsMenu/Player")
+playerRotationSpeed = 360.0
+playerAirSpeed = 500.0
+playerGravity = 9800.0
+playerTrailMaxPoints = 500
+playerTrailSegmentLength = 30

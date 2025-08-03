@@ -1,0 +1,127 @@
+[gd_scene load_steps=6 format=3 uid="uid://br18a6d6ufo3x"]
+
+[ext_resource type="Script" uid="uid://ddfw32ybrl2ux" path="res://Scripts/ui/PlaneSelection.cs" id="1_t1mki"]
+[ext_resource type="Texture2D" uid="uid://dk4ctg7ux484t" path="res://Asset_1.png" id="2_bjqq2"]
+[ext_resource type="Texture2D" uid="uid://55tnr6cey15j" path="res://Asset_2.png" id="3_1mwnl"]
+[ext_resource type="Texture2D" uid="uid://igt1b6ha16k7" path="res://Asset_3.png" id="4_7ynm3"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_n5gjy"]
+color = Color(1, 1, 1, 0.788235)
+thickness = 3
+
+[node name="PlaneSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t1mki")
+totalPlanes = 3
+gamePath = "res://Scenes/level_0.tscn"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Select your plane Captain!"
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_n5gjy")
+
+[node name="Plane1" type="TextureRect" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_bjqq2")
+
+[node name="Plane1_1" type="TextureRect" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_1mwnl")
+
+[node name="Plane1_2" type="TextureRect" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_7ynm3")
+
+[node name="Plane2" type="TextureRect" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("2_bjqq2")
+flip_v = true
+
+[node name="Plane2_1" type="TextureRect" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("3_1mwnl")
+flip_v = true
+
+[node name="Plane2_2" type="TextureRect" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("4_7ynm3")
+flip_v = true
+
+[node name="Plane3" type="TextureRect" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("2_bjqq2")
+flip_v = true
+
+[node name="Plane3_1" type="TextureRect" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("3_1mwnl")
+flip_v = true
+
+[node name="Plane3_2" type="TextureRect" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("4_7ynm3")
+flip_v = true
+
+[node name="HSeparator4" type="HSeparator" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_n5gjy")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="PreviousButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Previous"
+
+[node name="NextButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Next"
+
+[node name="PlayButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "PLAY!"
+
+[connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/PreviousButton" to="." method="_on_previous_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
